@@ -1,0 +1,40 @@
+<!-- Catppuccin Frappe — soft slate background with peachy lavender accents.
+     A flat theme: one set of colours, no Dark/Light variants. The host
+     applies these regardless of the active Avalonia variant. -->
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <!-- Surfaces — Frappé crust → base → surface ladder. -->
+    <SolidColorBrush x:Key="SidebarBackground"      Color="#292C3C" />
+    <SolidColorBrush x:Key="ContentBackground"      Color="#303446" />
+    <SolidColorBrush x:Key="PanelBackground1"       Color="#292C3C" />
+    <SolidColorBrush x:Key="PanelBackground2"       Color="#414559" />
+    <SolidColorBrush x:Key="PanelBackground3"       Color="#51576D" />
+    <SolidColorBrush x:Key="SubtleBorder"           Color="#51576D" />
+
+    <!-- Accents — Frappé blue + mauve. -->
+    <SolidColorBrush x:Key="PrimaryAccent"          Color="#8CAAEE" />
+    <SolidColorBrush x:Key="PrimaryAccentHover"     Color="#A5BFF2" />
+    <SolidColorBrush x:Key="OnPrimaryAccent"        Color="#303446" />
+    <SolidColorBrush x:Key="SecondaryAccent"        Color="#CA9EE6" />
+
+    <!-- Text — Frappé text + subtext0. -->
+    <SolidColorBrush x:Key="TextPrimary"            Color="#C6D0F5" />
+    <SolidColorBrush x:Key="TextSecondary"          Color="#A5ADCE" />
+
+    <!-- Status pairs — Frappé named accents on tinted dark bgs. -->
+    <SolidColorBrush x:Key="SuccessBackground"      Color="#3A4334" />
+    <SolidColorBrush x:Key="SuccessForeground"      Color="#A6D189" />
+    <SolidColorBrush x:Key="DangerBackground"       Color="#4A3338" />
+    <SolidColorBrush x:Key="DangerForeground"       Color="#E78284" />
+    <SolidColorBrush x:Key="InfoBackground"         Color="#343C50" />
+    <SolidColorBrush x:Key="InfoForeground"         Color="#8CAAEE" />
+    <SolidColorBrush x:Key="WarningBackground"      Color="#48402F" />
+    <SolidColorBrush x:Key="WarningForeground"      Color="#E5C890" />
+
+    <!-- Composition keys. -->
+    <SolidColorBrush x:Key="DropZoneHighlight"      Color="#B48CAAEE" />
+    <SolidColorBrush x:Key="WaveformBrush"          Color="#8CAAEE" />
+    <SolidColorBrush x:Key="LoopInheritForeground"  Color="#A5ADCE" />
+    <SolidColorBrush x:Key="LoopForceOnForeground"  Color="#A6D189" />
+    <SolidColorBrush x:Key="LoopForceOffForeground" Color="#E78284" />
+</ResourceDictionary>

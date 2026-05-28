@@ -1,0 +1,39 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <IsPackable>false</IsPackable>
+    <!-- xunit.v3 ships its own runner as an executable test host. -->
+    <OutputType>Exe</OutputType>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\src\CatppuccinThemePlugin.csproj" />
+    <!-- The plugin references SoundBoard.PluginApi with ExcludeAssets="runtime"
+         (the host supplies it), so the SDK assembly is absent from the plugin's
+         output. Tests have no host, so reference the same NuGet package WITHOUT
+         excluding runtime — that copies SoundBoard.PluginApi.dll (and NAudio.Core)
+         into the test output. Otherwise instantiating the plugin throws
+         FileNotFoundException. -->
+    <PackageReference Include="SoundBoard.PluginApi" Version="1.0.0-beta.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- The plugin csproj uses ExcludeAssets="runtime" on Avalonia so the
+         host supplies it at runtime. Tests have no host, so they need a
+         real Avalonia runtime to resolve the embedded avares:// palettes —
+         hence a direct (non-excluded) Avalonia reference here plus the
+         headless platform. -->
+    <PackageReference Include="Avalonia" Version="12.0.3" />
+    <PackageReference Include="Avalonia.Headless.XUnit" Version="12.0.3" />
+
+    <PackageReference Include="xunit.v3" Version="3.2.2" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="3.1.5" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="18.6.0" />
+    <!-- FluentAssertions pinned to 7.x: 8.x switched to a commercial license. -->
+    <PackageReference Include="FluentAssertions" Version="7.2.2" />
+  </ItemGroup>
+
+</Project>

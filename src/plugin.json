@@ -1,0 +1,10 @@
+{
+  "publisher": "github.DevinSanders",
+  "id": "theme.catppuccin",
+  "name": "Catppuccin",
+  "version": "1.0.0",
+  "author": "Devin Sanders",
+  "description": "Catppuccin colour scheme: Latte (light) plus Frappé, Macchiato, Mocha (dark variants).",
+  "entryDll": "CatppuccinThemePlugin.dll",
+  "isTheme": true
+}

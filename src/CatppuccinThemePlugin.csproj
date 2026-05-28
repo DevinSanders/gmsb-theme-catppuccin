@@ -1,0 +1,49 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <!-- AssemblyName must match the avares:// segment used in
+         ThemePalette.ResourceUris below. -->
+    <AssemblyName>CatppuccinThemePlugin</AssemblyName>
+    <RootNamespace>CatppuccinThemePlugin</RootNamespace>
+    <IsPackable>false</IsPackable>
+    <!-- Default for local dev builds. CI release.yml overrides via
+         `-p:Version=<tag-derived>`; PluginVersion.OfAssembly reads it
+         at runtime. Keep in sync with plugin.json for local builds. -->
+    <Version>1.0.0</Version>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="SoundBoard.PluginApi" Version="1.0.0-beta.1" ExcludeAssets="runtime" />
+
+    <!-- Avalonia + Avalonia.Themes.Fluent are required at compile time for the
+         AXAML resource markup that defines each ThemePalette. The host's
+         PluginLoadContext defers Avalonia to the default ALC at runtime —
+         the plugin reads back its own avares:// resources through the host's
+         live Avalonia instance, so shipping our own copy would create two
+         distinct CLR types named "ResourceDictionary" and break the merge.
+         ExcludeAssets="runtime" keeps the references for the compiler but
+         strips every Avalonia.*.dll from the publish output. -->
+    <PackageReference Include="Avalonia" Version="12.0.3" ExcludeAssets="runtime" />
+    <PackageReference Include="Avalonia.Themes.Fluent" Version="12.0.3" ExcludeAssets="runtime" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- Each <AvaloniaResource Include> compiles to an avares:// URI of
+         the form  avares://<AssemblyName>/<Include path> — that's what
+         CatppuccinThemePlugin.GetPalettes() returns to the host. -->
+    <AvaloniaResource Include="Themes/Latte.axaml" />
+    <AvaloniaResource Include="Themes/Frappe.axaml" />
+    <AvaloniaResource Include="Themes/Macchiato.axaml" />
+    <AvaloniaResource Include="Themes/Mocha.axaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="plugin.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>
