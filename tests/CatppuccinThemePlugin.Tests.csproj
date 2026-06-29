@@ -26,7 +26,7 @@
          real Avalonia runtime to resolve the embedded avares:// palettes —
          hence a direct (non-excluded) Avalonia reference here plus the
          headless platform. -->
-    <PackageReference Include="Avalonia" Version="12.0.4" />
+    <PackageReference Include="Avalonia" Version="12.0.5" />
     <PackageReference Include="Avalonia.Headless.XUnit" Version="12.0.4" />
 
     <PackageReference Include="xunit.v3" Version="3.2.2" />
