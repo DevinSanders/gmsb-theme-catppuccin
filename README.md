@@ -13,6 +13,13 @@ Four independent, flat palettes drawn from the [Catppuccin](https://catppuccin.c
 
 Each palette is a flat set of colours — one selectable look in the host's theme dropdown (shown as "Catppuccin: Latte", "Catppuccin: Mocha", etc.). There is no Dark/Light variant: the host applies the palette regardless of the active Avalonia variant and infers light/dark Fluent chrome (scrollbars, popups, focus rings) from the background luminance on its own.
 
+## Preview
+
+|  |  |
+|---|---|
+| **Latte** (light)<br>[![Latte](screenshots/Latte.png)](screenshots/Latte.png) | **Frappé** (dark)<br>[![Frappé](screenshots/Frappe.png)](screenshots/Frappe.png) |
+| **Macchiato** (dark)<br>[![Macchiato](screenshots/Macchiato.png)](screenshots/Macchiato.png) | **Mocha** (dark)<br>[![Mocha](screenshots/Mocha.png)](screenshots/Mocha.png) |
+
 ## Install
 
 Drop the released `.zip` onto Settings → Plugin Manager. Themes activate live — no restart needed. Pick the palette from Settings → Appearance → Theme.
